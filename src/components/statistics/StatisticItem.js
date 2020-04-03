@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import styles from "./statistics.module.css";
 
 function getRandomColor() {
   const color = () => {
@@ -7,17 +8,13 @@ function getRandomColor() {
   return `rgb(${color()},${color()},${color()})`;
 }
 
-const StatisticItem = ({label, percentage}) => {
-    return (
-        <li className="item"
-        style={{ backgroundColor: getRandomColor() }}>
-      <span className="label">{label}</span>
-    <span className="percentage">{percentage}%</span>
+const StatisticItem = ({ label, percentage }) => {
+  return (
+    <li className={styles.item} style={{ backgroundColor: getRandomColor() }}>
+      <span className={styles.label}>{label}</span>
+      <span className={styles.percentage}>{percentage}%</span>
     </li>
-        
-    );
+  );
 };
-
-
 
 export default StatisticItem;

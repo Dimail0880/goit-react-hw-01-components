@@ -1,31 +1,30 @@
-import React from 'react';
-import StatisticItem from './StatisticItem';
+import React from "react";
+import StatisticItem from "./StatisticItem";
 import PropTypes from "prop-types";
+import styles from "./statistics.module.css";
 
+const Statistic = ({ title, stats }) => {
+  return (
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>Upload stats</h2>}
 
-
-const Statistic = ({title, stats}) => {
-    return(
-        <section className="statistics">
-          {title && <h2 className="title">Upload stats</h2> }
-  
-
-  <ul className="stat-list">
-      <>
-  {stats.map(el => (
-          <StatisticItem
-            key={el.id}
-            label={el.label}
-            percentage={el.percentage}
-          /> ))} </>
-  </ul>
-</section>
-
-    )
-}
+      <ul className={styles.stat_list}>
+        <>
+          {stats.map(el => (
+            <StatisticItem
+              key={el.id}
+              label={el.label}
+              percentage={el.percentage}
+            />
+          ))}{" "}
+        </>
+      </ul>
+    </section>
+  );
+};
 Statistic.defaultProps = {
   stats: {},
-  title: '',
+  title: ""
 };
 
 Statistic.propTypes = {
@@ -34,8 +33,8 @@ Statistic.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.string,
-      percentage: PropTypes.number,
-    }),
-  ),
+      percentage: PropTypes.number
+    })
+  )
 };
-export  default Statistic
+export default Statistic;
