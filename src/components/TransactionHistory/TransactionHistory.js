@@ -1,6 +1,7 @@
 import React from 'react';
 import TransactionItem from './TransactionItem';
 
+
 const TransactionHistory = ({items}) => {
     return (
         <table className="transaction-history">

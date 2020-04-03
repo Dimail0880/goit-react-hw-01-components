@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const TransactionItem = ({type, amount, currency}) => {
     return (
@@ -11,12 +11,12 @@ const TransactionItem = ({type, amount, currency}) => {
     );
 };
 
-// TransactionItem.propTypes = {
-//     key: PropTypes.number.isRequired,
-//     type: PropTypes.string.isRequired,
-//     amount: PropTypes.number.isRequired,
-//     currency: PropTypes.string.isRequired
-// }
+TransactionItem.propTypes = {
+    // key: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired
+}
 
 export default TransactionItem;
 

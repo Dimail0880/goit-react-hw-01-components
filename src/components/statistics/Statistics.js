@@ -1,12 +1,14 @@
 import React from 'react';
 import StatisticItem from './StatisticItem';
+import PropTypes from "prop-types";
 
 
 
-const Statistic = ({stats}) => {
+const Statistic = ({title, stats}) => {
     return(
         <section className="statistics">
-  <h2 className="title">Upload stats</h2>
+          {title && <h2 className="title">Upload stats</h2> }
+  
 
   <ul className="stat-list">
       <>
@@ -21,5 +23,19 @@ const Statistic = ({stats}) => {
 
     )
 }
+Statistic.defaultProps = {
+  stats: {},
+  title: '',
+};
 
+Statistic.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    }),
+  ),
+};
 export  default Statistic
