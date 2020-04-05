@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./statistics.module.css";
+import PropTypes from "prop-types";
+import  getRandomColor  from "../../helpers/GetRandomColor"
 
-function getRandomColor() {
-  const color = () => {
-    return Math.floor(Math.random() * 256);
-  };
-  return `rgb(${color()},${color()},${color()})`;
-}
+
+
+
 
 const StatisticItem = ({ label, percentage }) => {
   return (
@@ -16,5 +15,10 @@ const StatisticItem = ({ label, percentage }) => {
     </li>
   );
 };
+
+StatisticItem.propTypes = {
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+}
 
 export default StatisticItem;
